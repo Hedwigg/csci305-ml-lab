@@ -1,13 +1,14 @@
-<firstname> <lastname>
+Joel Lechman 
 CSCI 305
 Spring 2018
 Lab Questions
 =======================
-1.
+1. val it = [4,2,5,2,6,10] : int list
 
-2.
-
-3.
+2. Function 'f' increments each element in a list by 1. If the list has no elements,
+	it doesnt do anything.
+	
+3. 
 
 4.
 

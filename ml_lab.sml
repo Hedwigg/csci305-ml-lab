@@ -2,12 +2,14 @@
 *
 * CSCI 305 - ML Programming Lab
 *
-* <firstname> <lastname>
-* <email-address>
+* Joel Lechman
+* joel1500@bresnan.net
 *
 ***************************************************************)
 
 (* Define your data type and functions here *)
+ fun f [] = [] (* a *)
+   | f (x::xs) = (x + 1) :: (f xs) (* b *);
 
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
