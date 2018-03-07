@@ -1,4 +1,4 @@
-Joel Lechman 
+Joel Lechman
 CSCI 305
 Spring 2018
 Lab Questions
@@ -6,11 +6,13 @@ Lab Questions
 1. val it = [4,2,5,2,6,10] : int list
 
 2. Function 'f' increments each element in a list by 1. If the list has no elements,
-	it doesnt do anything.
-	
-3. 
+	it doesn't do anything.
 
-4.
+3. The line before "a" defines a function 'f' that takes a list[] as a parameter and returns either an empty list using the pattern []
+ 	(if the input list was empty) or (line b).
+
+4. The line before "b" states that for every element in the non-empty list that was passed into f, add 1 to it. It uses the cons operator :: to use a cons of
+		patterns as a pattern, to extract each element and to add the incremented element back to the rest of the list.
 
 5.
 
@@ -24,9 +26,12 @@ Lab Questions
 
 10.
 
-11.
+11. Something I like about ML is how functions can be so much more detailed by the use of patterns. My favorite pattern is the cons of patterns as a pattern.
+	Ex. Using (x::xs) to manipulate elements in lists.
 
-12.
+12.	What I dislike most about ML is its readability to those who are not super experienced in the language. The shorthand and uncommon syntax still throws me though
+	 a loop sometimes. Especially when I am reading new or unfamiliar code. It takes me a considerable amount more time to understand basic code in ML than if it
+	 was written in another language.
 
 13.
 

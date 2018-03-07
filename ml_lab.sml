@@ -11,6 +11,23 @@
  fun f [] = [] (* a *)
    | f (x::xs) = (x + 1) :: (f xs) (* b *);
 
+
+(* Datatype set *)
+datatype 'element set =
+  Empty | Set of 'element * 'element set;
+
+(* a function that determines if an element e is part of the set, set.
+ This function will return true if e is a member of the set, set, and false otherwise.*)
+fun isMember (e,set) = false
+  | isMember (e,hd::tl) =
+    if e=hd then true
+    else isMember (e,tl);
+
+  print("-----");
+isMember(1,[1,2,3,4]);
+print("_____");
+
+
 (* Simple function to stringify the contents of a Set of characters *)
 fun stringifyCharSet Empty = ""
   | stringifyCharSet (Set(y, ys)) = Char.toString(y) ^ " " ^ stringifyCharSet(ys);
@@ -32,14 +49,8 @@ fun print_str x = print ("{ " ^ stringifyStringSet(x) ^ "}\n");
 (* Simple function that prints a set of characters *)
 fun print_chr x = print ("{ " ^ stringifyCharSet(x) ^ "}\n");
 
-list2Set [1, 3, 2];
-list2Set [#"a", #"b", #"c"];
-list2Set [];
-list2Set [6, 2, 2];
-list2Set ["x", "y", "z", "x"];
-
 (* Question 1 *)
-f [3, 1, 4, 1, 5, 9]
+f [3, 1, 4, 1, 5, 9];
 
 (* Question 5 *)
 val quest5 = isMember "one" (list2Set ["1", "2", "3", "4"]);
