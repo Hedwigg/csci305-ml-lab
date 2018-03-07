@@ -14,13 +14,18 @@ Lab Questions
 4. The line before "b" states that for every element in the non-empty list that was passed into f, add 1 to it. It uses the cons operator :: to use a cons of
 		patterns as a pattern, to extract each element and to add the incremented element back to the rest of the list.
 
-5.
+5. You get an operator and operator tycon mismatch error:
+		Error: operator and operand don't agree [tycon mismatch]
+		operator domain : ''Z * ''Z list
+		operand: 	string									***********???????????????*****
 
-6.
+6. Tail recursion
 
 7.
 
-8.
+8. It can be beneficial to write tail recursing functions because unlike a normal function, it does not need to have a stack frame for the compiler to come
+		back to. With tail recursing function you can just pass the result of the recursive call instead of waiting for it (you don't need to consume any space on the stack)
+		this improves memory usage of the function and prevents stack overflow.
 
 9.
 
@@ -33,8 +38,13 @@ Lab Questions
 	 a loop sometimes. Especially when I am reading new or unfamiliar code. It takes me a considerable amount more time to understand basic code in ML than if it
 	 was written in another language.
 
-13.
 
-14.
+13. I enjoyed this lab in the idea that it challenged me to learn a lot about a language that I really do not enjoy working with. I find ML really hard to read
+		so working on this lab was quite infuriating at times because if I get distracted in the middle of figuring out what a line says/does I have to start over.
+		I really do like how well the starting code is explained to us. Compared to the ruby lab it was a lot easier to understand what was already going on in the
+		program and what I needed to add myself.
 
-15.
+14. ~7 hours
+
+15. I really hope that I do not have to use ML again. At least not for every day programming because other languages are 100x easier for simple projects. If I ever
+		need the module system in SML, then I'll actually use it.

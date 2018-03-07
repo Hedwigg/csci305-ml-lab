@@ -18,14 +18,43 @@ datatype 'element set =
 
 (* a function that determines if an element e is part of the set, set.
  This function will return true if e is a member of the set, set, and false otherwise.*)
-fun isMember (e,set) = false
-  | isMember (e,hd::tl) =
+fun isMember (e, []) = false
+  | isMember (e, hd::tl) =
     if e=hd then true
-    else isMember (e,tl);
+    else isMember (e, tl);
 
-  print("-----");
+print("-----");
 isMember(1,[1,2,3,4]);
+isMember(2,[1,2,3,4]);
+isMember(3,[1,2,3,4]);
+isMember(4,[1,2,3,4]);
+isMember(1,[]);
+
 print("_____");
+
+
+fun list2Set [] = Empty
+| list2Set (hd::tl) hd =
+      let
+      fun insert Empty value = Set(Set,Empty)
+
+(* toset?    Set(1, Set(2,nil))    *)
+
+
+(*
+fun union([],y) = y
+|   union(a::x,y) =
+    if member(a,y) then union(x,y)
+    else a::union(x,y);
+
+
+
+fun intersection([],y) = []
+|   intersection(a::x,y) =
+    if member(a,y) then a::intersection(x,y)
+    else intersection(x,y);
+
+*)
 
 
 (* Simple function to stringify the contents of a Set of characters *)
