@@ -13,42 +13,41 @@
 
 
 (* Datatype set *)
-datatype 'element set =
-  Empty | Set of 'element * 'element set;
+datatype 'a set =
+  Empty | Set of 'a * 'a set;
 
 (* a function that determines if an element e is part of the set, set.
  This function will return true if e is a member of the set, set, and false otherwise.*)
-fun isMember (e, []) = false
-  | isMember (e, hd::tl) =
-    if e=hd then true
-    else isMember (e, tl);
-
-print("-----");
-isMember(1,[1,2,3,4]);
-isMember(2,[1,2,3,4]);
-isMember(3,[1,2,3,4]);
-isMember(4,[1,2,3,4]);
-isMember(1,[]);
-
-print("_____");
+fun isMember (e, Set(element, otherSet)) =
+  if e = element then true
+  else if otherSet = Empty then false
+  else isMember(e, otherSet);
 
 
-fun list2Set [] = Empty
-| list2Set (hd::tl) hd =
-      let
-      fun insert Empty value = Set(Set,Empty)
-
-(* toset?    Set(1, Set(2,nil))    *)
-
+isMember(1,Set(1,Set(2,Set(3,Empty))));
 
 (*
-fun union([],y) = y
-|   union(a::x,y) =
-    if member(a,y) then union(x,y)
-    else a::union(x,y);
+fun list2Set [] = Empty
+| list2Set (hd::tl) = Set(hd, list2Set(tl));
 
 
 
+print("\n");
+list2Set[5,3,2,9,8,0];
+print("\n");
+*)
+
+(*
+fun union(Set1(element1,otherSet1), Set2(element2,otherSet2)) =
+if otherSet2 = Empty then
+*)
+
+print("---\n");
+union Set(1,Set(2,Set(3,Empty)))), Set(1,Set(4,Set(5,Empty))));
+print("---\n");
+*)
+
+(*
 fun intersection([],y) = []
 |   intersection(a::x,y) =
     if member(a,y) then a::intersection(x,y)

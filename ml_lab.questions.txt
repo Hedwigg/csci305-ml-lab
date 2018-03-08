@@ -17,9 +17,10 @@ Lab Questions
 5. You get an operator and operator tycon mismatch error:
 		Error: operator and operand don't agree [tycon mismatch]
 		operator domain : ''Z * ''Z list
-		operand: 	string									***********???????????????*****
+		operand: 	string
+		You get this because you pass in a list instead of a set.
 
-6. Tail recursion
+6. Tail recursion, once we hit the base case we are done. We don't have to go back up a stack.
 
 7.
 
@@ -32,7 +33,7 @@ Lab Questions
 10.
 
 11. Something I like about ML is how functions can be so much more detailed by the use of patterns. My favorite pattern is the cons of patterns as a pattern.
-	Ex. Using (x::xs) to manipulate elements in lists.
+	Ex. Using (hd::tl) to manipulate elements in lists.
 
 12.	What I dislike most about ML is its readability to those who are not super experienced in the language. The shorthand and uncommon syntax still throws me though
 	 a loop sometimes. Especially when I am reading new or unfamiliar code. It takes me a considerable amount more time to understand basic code in ML than if it
