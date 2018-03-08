@@ -26,21 +26,15 @@ fun isMember (e, Set(element, otherSet)) =
 
 isMember(1,Set(1,Set(2,Set(3,Empty))));
 
-(*
+
 fun list2Set [] = Empty
 | list2Set (hd::tl) = Set(hd, list2Set(tl));
 
 
-
-print("\n");
-list2Set[5,3,2,9,8,0];
-print("\n");
-*)
-
-(*
 fun union(Set1(element1,otherSet1), Set2(element2,otherSet2)) =
-if otherSet2 = Empty then
-*)
+if isMember(element1, Set2(element2, otherSet2))
+
+
 
 print("---\n");
 union Set(1,Set(2,Set(3,Empty)))), Set(1,Set(4,Set(5,Empty))));

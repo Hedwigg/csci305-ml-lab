@@ -16,13 +16,14 @@ Lab Questions
 
 5. You get an operator and operator tycon mismatch error:
 		Error: operator and operand don't agree [tycon mismatch]
-		operator domain : ''Z * ''Z list
+		operator domain : ''Z * ''Z set
 		operand: 	string
-		You get this because you pass in a list instead of a set.
 
 6. Tail recursion, once we hit the base case we are done. We don't have to go back up a stack.
 
-7.
+7. val it = Set ("it",Set ("was", Set #)) : string set
+	or the full version without the #:
+	val it = Set("it",Set("was",Set("the",Set("best", Set("of", Set("times,", Set("it", Set("was", Set("the", Set("worst", Set("of", Set("times",Empty))))))))))));
 
 8. It can be beneficial to write tail recursing functions because unlike a normal function, it does not need to have a stack frame for the compiler to come
 		back to. With tail recursing function you can just pass the result of the recursive call instead of waiting for it (you don't need to consume any space on the stack)
