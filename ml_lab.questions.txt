@@ -11,10 +11,10 @@ Lab Questions
 3. The line before "a" defines a function 'f' that takes a list[] as a parameter and returns either an empty list using the pattern []
  	(if the input list was empty) or (line b).
 
-4. The line before "b" states that for every element in the non-empty list that was passed into f, add 1 to it. It uses the cons operator :: to use a cons of
-		patterns as a pattern, to extract each element and to add the incremented element back to the rest of the list.
+4. Line b splits the list into a 'head' and 'tail' so that we can operate on one element in the list at a time. It adds 1 to the current 'head'
+		element and then recurses with the tail of the list. This effectively loops though each element in the list and adds 1 to it. The looping is handled with recursion.
 
-5. False
+5. false
 
 6. Tail recursion, once we hit the base case we are done. We don't have to go back up a stack.
 
