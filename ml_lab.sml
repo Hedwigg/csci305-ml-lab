@@ -30,24 +30,21 @@ isMember(1,Set(1,Set(2,Set(3,Empty))));
 fun list2Set [] = Empty
 | list2Set (hd::tl) = Set(hd, list2Set(tl));
 
+(*returns the untion of 2 different sets*)
+fun union (Set(element, otherSet), set2) =
+  if isMember(element, set2) then union(otherSet, set2) (*Checks if element is in set2. If it is skip it and move on.*)
+  else if otherSet = Empty then Set(element, set2) (*If element is not in set2, check if otherSet is empty. If it is, you have reached the end, return the unionized set.*)
+  else Set(element,union(otherSet, set2)); (*If otherset isn't empty i.e. not the end, add element to the set, and recursively call union with otherset and set2*)
 
-fun union(Set1(element1,otherSet1), Set2(element2,otherSet2)) =
-if isMember(element1, Set2(element2, otherSet2))
 
 
+(*returns the intersection of 2 different sets *)
+fun intersect (Set(element, otherSet), set2) =
+  if otherSet = Empty andalso isMember(element, set2) then Set(element, Empty) (*Checks if otherSet is empty (the end) and if element is apart of set2. If it is, finish the set off and add element to it.*)
+  else if otherSet = Empty then Empty (*If the program is at the end, but element is not in set2, just return empty and finish the set.*)
+  else if isMember(element, set2) then Set(element, intersect(otherSet, set2))(*If element is also in set2, add it to the set and call intersect recursively with otherSet and set2.*)
+  else intersect(otherSet, set2);
 
-print("---\n");
-union Set(1,Set(2,Set(3,Empty)))), Set(1,Set(4,Set(5,Empty))));
-print("---\n");
-*)
-
-(*
-fun intersection([],y) = []
-|   intersection(a::x,y) =
-    if member(a,y) then a::intersection(x,y)
-    else intersection(x,y);
-
-*)
 
 
 (* Simple function to stringify the contents of a Set of characters *)
